@@ -9,7 +9,7 @@
 
 **Платформа:** Windows (поддержка мультимониторности, DPI Awareness, глобальные горячие клавиши).
 
-## Скриншоты
+## Пример перевода
 
 <div align="center">
   <img src="docs/screenshots/before.png" width="49%" alt="До перевода" />
