@@ -68,7 +68,7 @@
 ### 2. Зависимости
 
 ```bash
-git clone https://github.com/<your-username>/ScreenTranslate.git
+git clone https://github.com/Merk1l/ScreenTranslate.git
 cd ScreenTranslate
 python -m venv .venv
 .venv\Scripts\activate
