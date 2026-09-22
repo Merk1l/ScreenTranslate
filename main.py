@@ -51,11 +51,16 @@ load_dotenv()
 
 APP_DIR = Path(__file__).resolve().parent
 
-# Базовая настройка логирования
-logging.basicConfig(
-    level=logging.INFO,
-    format='[%(levelname)s] %(message)s'
-)
+def ensure_logging():
+    """Возвращает корневой логгер под наш контроль: PaddleOCR подменяет
+    обработчик и формат, а с show_log=False поднимает уровень до CRITICAL."""
+    logging.basicConfig(
+        level=logging.INFO,
+        format='[%(levelname)s] %(message)s',
+        force=True,
+    )
+
+ensure_logging()
 
 
 class Config:
@@ -608,6 +613,7 @@ class OCRService:
                     det_db_thresh=Config.PADDLE_DET_THRESH, 
                     show_log=False
                 )
+                ensure_logging()
                 self.available = True
                 logging.info("PaddleOCR успешно инициализирован")
             except Exception as e:
@@ -1076,26 +1082,10 @@ class ScreenOverlay:
         self.win.bind('<Key-Q>', lambda e: self.hide())
         
     def show(self, area):
-        if not area: 
+        if not area:
             return
         ax, ay, aw, ah = area
-        
-        with mss.mss() as sct:
-            monitors = sct.monitors
-            target_mon = monitors[1]
-            center_x, center_y = ax + aw // 2, ay + ah // 2
-            
-            for i in range(1, len(monitors)):
-                m = monitors[i]
-                if (m['left'] <= center_x < m['left'] + m['width'] and 
-                    m['top'] <= center_y < m['top'] + m['height']):
-                    target_mon = m
-                    break
-            
-            rel_x, rel_y = ax - target_mon['left'], ay - target_mon['top']
-            logging.debug(f"Overlay: монитор {target_mon['width']}x{target_mon['height']}+{target_mon['left']}+{target_mon['top']}")
-        
-        self.win.geometry(f"{aw}x{ah}+{rel_x}+{rel_y}")
+        self.win.geometry(f"{aw}x{ah}+{ax}+{ay}")
         self.win.update_idletasks()
         self.win.deiconify()
         self.win.focus_set()
