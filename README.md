@@ -12,8 +12,8 @@
 ## Скриншоты
 
 <div align="center">
-  <img src="docs/screenshots/before.png" width="48%" alt="До перевода" />
-  <img src="docs/screenshots/after.png" width="48%" alt="После перевода" />
+  <img src="docs/screenshots/before.png" width="49%" alt="До перевода" />
+  <img src="docs/screenshots/after.png" width="49%" alt="После перевода" />
 </div>
 
 *Слева: исходный фрагмент с английским текстом. Справа: тот же фрагмент после распознавания и перевода поверх изображения.*
