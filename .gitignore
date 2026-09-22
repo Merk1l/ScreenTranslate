@@ -1,0 +1,26 @@
+# Секреты и окружение
+.env
+
+# Кэш и рантайм-артефакты
+.cache/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+
+# Сборка
+*.egg-info/
+dist/
+build/
+
+# Веса моделей (распространяются отдельно, см. models/README.md)
+*.pt
+
+# IDE
+.idea/
+.vscode/

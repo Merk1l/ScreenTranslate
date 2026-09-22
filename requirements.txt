@@ -1,0 +1,18 @@
+# База
+numpy>=1.24,<2.0
+opencv-python>=4.8,<4.11
+Pillow>=9.5,<11.0
+mss>=9.0,<10.0
+pynput>=1.7.6,<2.0
+python-dotenv>=1.0,<2.0
+
+# API-клиент перевода
+openai>=1.30,<2.0
+
+# Детекция облачков
+ultralytics>=8.1,<9.0
+
+# OCR. Код написан под API PaddleOCR 2.x (use_angle_cls, use_gpu),
+# в 3.x сигнатура сломана, поэтому верхняя граница обязательна.
+paddleocr>=2.7,<3.0
+paddlepaddle>=2.5,<3.0
