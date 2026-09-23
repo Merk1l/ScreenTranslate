@@ -105,7 +105,6 @@ models/comic-speech-bubble-detector.pt
 Источники весов:
 - [ogkalu/comic-speech-bubble-detector-yolov8m (Hugging Face)](https://huggingface.co/ogkalu/comic-speech-bubble-detector-yolov8m) -
   обучена на ~8k страницах манги, вебтунов и комиксов.
-- Либо обучите собственную модель на датасетах с Roboflow Universe.
 
 Без файла приложение запустится, но детекция облачков будет отключена.
 
