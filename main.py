@@ -52,8 +52,6 @@ load_dotenv()
 APP_DIR = Path(__file__).resolve().parent
 
 def ensure_logging():
-    """Возвращает корневой логгер под наш контроль: PaddleOCR подменяет
-    обработчик и формат, а с show_log=False поднимает уровень до CRITICAL."""
     logging.basicConfig(
         level=logging.INFO,
         format='[%(levelname)s] %(message)s',
